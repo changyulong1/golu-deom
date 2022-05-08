@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/changyulong1/golu-deom/issues"
   },
-  "homepage": "https://github.com/changyulong1/golu-deom#readme"
+  "homepage": "https://github.com/changyulong1/golu-deom#readme",
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
 }
