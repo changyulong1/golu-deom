@@ -6,7 +6,15 @@
 
 <script lang="ts">
 export default {
-  name: "Button-group"
+  //检测子元素是否是g-button
+  mounted(){
+    for(let node of this.$el.children ){
+      const name = node.nodeName.toLowerCase()
+      if(name !== 'button'){
+        console.warn(`g-button-group的子元素应给是g-button，但是你写的是${name}`)
+      }
+    }
+  }
 };
 </script>
 
