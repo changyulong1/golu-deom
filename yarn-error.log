@@ -1,0 +1,36 @@
+Arguments: 
+  D:\node\nodejs\node.exe D:\yarn\bin\yarn.js init
+
+PATH: 
+  D:\Software\cmoder\vendor\git-for-windows\mingw64\bin;D:\Software\cmoder\vendor\git-for-windows\usr\bin;D:\jirengu\homedir\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\VUE\webpack练习\code1\node_modules\.bin;D;D:\yarn\bin;C:\Program Files (x86)\EasyShare\x86;C:\Program Files (x86)\EasyShare\x64;D:\node\nodejs;C:\Program Files\Git\cmd;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Local\Programs\Microsoft VS Code\bin;D:\Software\cmoder;C:\Users\admin\AppData\Local\Yarn\bin;D:\mingling\a;C:\Program Files (x86)\Tencent\QQGameTempest\Hall.57734;C:\Users\admin\Desktop\abd\abd.exe\adb;C:\Users\admin\Desktop\abd;D:\WebStorm 2021.3.1\bin;C:\Users\admin\AppData\Roaming\npm;D:\jirengu\homedir;C:\Program Files\Docker Toolbox;E:\Docker Toolbox
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  16.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (D:\yarn\lib\cli.js:137009:13)
+      at Interface.emit (node:events:520:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:520:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:520:28)
+      at addChunk (node:internal/streams/readable:315:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
