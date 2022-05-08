@@ -11,7 +11,16 @@
 
 <script>
 export default {
-  props:['iconName','iconPosition']
+  props:{
+    iconName:{},
+    iconPosition:{
+      type:String,
+      default:"left",
+      validator(value){
+        return value === 'left' || value === 'right';
+      }
+    }
+  }
 }
 </script>
 
