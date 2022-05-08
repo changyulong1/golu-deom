@@ -49,8 +49,7 @@ export default {
     >.icon{order: 2;margin-right: 0;margin-left: .3em;}
     >.content{order: 1}
   }
-  >.loading{
-    margin-right: .3em;
+  >.loading{margin-right: .3em;
     animation: spin 2s infinite linear;
   }
 }
