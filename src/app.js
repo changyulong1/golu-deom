@@ -21,6 +21,8 @@ new Vue({
 
 //单元测试
 import chai from 'chai'
+import spies from "chai-spies"
+chai.use(spies)
 const expect = chai.expect
 {
     const Constructor = Vue.extend(Button)
@@ -73,7 +75,8 @@ const expect = chai.expect
     const Constructor = Vue.extend(Button)
     const vm = new Constructor({
         propsData: {
-            icon: 'setup'
+            icon: 'setup',
+            iconPosition:'right'
         }
     })
     vm.$mount(div)
@@ -84,18 +87,18 @@ const expect = chai.expect
     vm.$destroy()
 }
 {
-    const div = document.createElement('div')
-    document.body.appendChild(div)
     const Constructor = Vue.extend(Button)
     const vm = new Constructor({
         propsData: {
             icon: 'setup',
-            iconPosition:'right'
+
         }
     })
-    vm.$mount(div)
-    vm.$on('click',()=>{
-        console.log()
-    })
-
+    vm.$mount()
+    //模拟事件执行函数
+    let spy = chai.spy(function (){})
+    vm.$on('click',spy)
+    const button = vm.$el
+    button.click()
+    expect(spy).to.have.been.called()
 }
