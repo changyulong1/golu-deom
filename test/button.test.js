@@ -29,7 +29,7 @@ describe('Button', () => {
             }
         }).$mount()
         const useElements = vm.$el.querySelectorAll('use')
-        expect(useElements.length).to.equal(2)
+        expect(useElements.length).to.equal(1)
         expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
         vm.$destroy()
     })
