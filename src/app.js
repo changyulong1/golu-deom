@@ -12,7 +12,13 @@ new Vue({
     data:{
         loading1:false,
         loading2:false,
-        loading3:false
+        loading3:false,
+        value:'张灿'
+    },
+    methods:{
+        inputChange(e){
+            console.log(e)
+        }
     }
 })
 

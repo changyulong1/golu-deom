@@ -34,13 +34,9 @@
 </head>
 <body>
 <div id="app">
-  <div class="box">
-      <g-input value="张三"></g-input>
-      <g-input value="李四" disabled></g-input>
-      <g-input value="小明" readonly></g-input>
-  </div>
    <div class="box">
-       <g-input value="你好" error="至少五个字"></g-input>
+       <g-input v-model="value" ></g-input>
+       <span>{{ value }}</span>
    </div>
    <div style="margin: 20px;">
        <g-button @click="loading1=!loading1" :loading="loading1">按钮</g-button>
