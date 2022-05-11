@@ -1,10 +1,9 @@
 {
   "name": "gulo-deom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "这是一个ui组件库",
   "main": "dist/index.js",
   "scripts": {
-
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
   },
