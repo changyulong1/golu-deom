@@ -1,6 +1,6 @@
 <template>
-  <div class="g-col" :class="[`col-${span}`,`offset-${offset}`]"
-      :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}"
+  <div class="g-col" :class="colClass"
+       :style="colStyle"
   >
     <div style="border: 1px solid green;height: 100%">
       <slot></slot>
@@ -11,17 +11,28 @@
 <script>
 export default {
   name: "Col",
-  data(){
-    return{
-      gutter:0
+  data() {
+    return {
+      gutter: 0
     }
   },
-  props:{
-    span:{
-      type:[String,Number]
+  props: {
+    span: {
+      type: [String, Number]
     },
-    offset:{
-      type:[String,Number]
+    offset: {
+      type: [String, Number]
+    }
+  },
+  computed: {
+    colClass() {
+      const {span,offset} = this
+      return [span && `col-${span}`, offset && `offset-${offset}`]
+    },
+    colStyle() {
+      const {gutter} = this
+      return {paddingLeft: gutter / 2 + 'px', paddingRight: gutter / 2 + 'px'}
+
     }
   }
 };
