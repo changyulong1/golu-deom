@@ -30,10 +30,33 @@
         .box{
             margin: 20px;
         }
+        .row{
+            border: 1px solid #000000;
+        }
     </style>
 </head>
 <body>
 <div id="app">
+    <div class="row">
+        <g-row gutter="20">
+            <g-col span="12">1</g-col>
+            <g-col span="12">2</g-col>
+        </g-row>
+        <g-row gutter="10">
+            <g-col span="12">1</g-col>
+            <g-col span="10" offset="2">2</g-col>
+        </g-row>
+        <g-row gutter="30">
+            <g-col span="2">1</g-col>
+            <g-col span="8" offset="14">2</g-col>
+        </g-row>
+        <g-row gutter="40">
+            <g-col span="10">1</g-col>
+            <g-col span="8">2</g-col>
+            <g-col span="4" offset="2">3</g-col>
+        </g-row>
+    </div>
+
    <div class="box">
        <g-input v-model="value" ></g-input>
        <span>{{ value }}</span>
