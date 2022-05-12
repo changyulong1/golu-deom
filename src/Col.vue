@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     colClass() {
-      const {span,offset} = this
+      const {span, offset} = this
       return [span && `col-${span}`, offset && `offset-${offset}`]
     },
     colStyle() {
@@ -40,7 +40,6 @@ export default {
 
 <style lang="scss" scoped>
 .g-col {
-  width: 50%;
   height: 100px;
   $class-prefix: col-;
   @for $n from 1 through 24 {
