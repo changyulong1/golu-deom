@@ -69,9 +69,9 @@ export default {
       return [
         ...createClass({span, offset}),
         ...createClass(ipad, 'ipad-'),
-        ...createClass(narrowPc, 'narrowPc-'),
+        ...createClass(narrowPc, 'narrow-pc-'),
         ...createClass(pc, 'pc-'),
-        ...createClass(widePc, ' widePc-'),
+        ...createClass(widePc, 'wide-pc-'),
       ]
     },
     colStyle() {
