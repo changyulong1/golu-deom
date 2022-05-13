@@ -129,7 +129,7 @@ export default {
     $class-prefix: col-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: ($n / 24) * 100%;
+      width: ($n / 24) * 100%;
       }
     }
     $class-prefix: offset-pc-;
