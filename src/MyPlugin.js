@@ -1,9 +1,7 @@
 import Toast from "./Toast";
-
 let currentToast
 export default {
     install(Vue,options){
-
         Vue.prototype.$toast =(message,toastOptions)=>{
             if(currentToast){
                 currentToast.clear()
@@ -12,6 +10,11 @@ export default {
         }
     }
 }
+
+
+
+
+
 
 
 function createToast({Vue,message,propsData}){

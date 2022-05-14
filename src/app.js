@@ -33,16 +33,24 @@ new Vue({
         value: '张灿'
     },
     methods: {
-        showToast() {
-            this.$toast('<h3>我是标签</h3>',
+        positionTop() {
+            this.$toast('<h3>我是标签1</h3>',
                 {
-                    closButton: {
-                        text: '关闭', callback: (value) => {
-                            value.log()
-                        }
-                    },
-                    enableHtml:true,
+                    position:"top"
+                }
+            )
+        },
+        center(){
+            this.$toast('<h3>我是标签2</h3>',
+                {
                     position:"middle"
+                }
+            )
+        },
+        bottom(){
+            this.$toast('<h3>我是标签3</h3>',
+                {
+                    position:"bottom"
                 }
             )
         }
