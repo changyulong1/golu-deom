@@ -43,7 +43,10 @@ new Vue({
         center(){
             this.$toast('<h3>我是标签2</h3>',
                 {
-                    position:"middle"
+                    position:"middle",
+                    closeButton: {text:'关闭把',callback:()=>{
+                        console.log(666)
+                        }}
                 }
             )
         },

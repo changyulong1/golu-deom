@@ -92,7 +92,6 @@ describe('Col', () => {
             }
         }).$mount(div)
         const element = vm.$el
-        console.log(element)
         expect(vm.$el.classList.contains('col-wide-pc-1')).to.eq(true)
         expect(vm.$el.classList.contains('offset-wide-pc-2')).to.eq(true)
         div.remove()

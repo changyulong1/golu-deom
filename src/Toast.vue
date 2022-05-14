@@ -6,8 +6,8 @@
         <div v-else v-html="$slots.default[0]"></div>
       </div>
       <div class="line" ref="line"></div>
-      <span class="clear" v-if="closButton" @click="onLosClick">
-      {{ closButton.text }}
+      <span class="clear" v-if="closeButton" @click="onLosClick">
+      {{ closeButton.text }}
     </span>
     </div>
   </div>
@@ -20,16 +20,14 @@ export default {
   props: {
     //控制自动关闭
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    //控制间隔时间
-    autoCloseDelay: {
-      type: Number,
-      default: 50
+      type: [Boolean, Number],
+      default: 50,
+      validator(value){
+        return value === false || typeof value === 'number';
+      }
     },
     //控制关闭按钮内容及回调
-    closButton: {
+    closeButton: {
       type: Object,
       default() {
         return {
@@ -64,28 +62,29 @@ export default {
   methods: {
     updateStyles() {
       this.$nextTick(() => {
-        this.$refs.line.style.height = `${this.$refs.parent.getBoundingClientRect().height}px`
+        this.$refs.line.style.height =
+            `${this.$refs.parent.getBoundingClientRect().height}px`
+
       })
     },
     execAutoClose() {
       if (this.autoClose) {
         setTimeout(() => {
           this.clear()
-        }, this.autoCloseDelay * 1000)
+        }, this.autoClose * 1000)
       }
     },
     clear() {
       this.$el.remove()
-      this.$destroy()
-    },
-    log() {
-      console.log('测试')
+      this.$emit('clear')
+      // this.$destroy()
     },
     onLosClick() {
       this.clear()
-      if (this.closButton && typeof this.closButton.callback === "function") {
-        this.closButton.callback(this)
+      if (this.closeButton && typeof this.closeButton.callback === 'function') {
+        this.closeButton.callback(this)//this === toast实例
       }
+
     }
   }
 };
