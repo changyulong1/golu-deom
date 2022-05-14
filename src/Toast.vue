@@ -77,7 +77,7 @@ export default {
     clear() {
       this.$el.remove()
       this.$emit('clear')
-      // this.$destroy()
+      this.$destroy()
     },
     onLosClick() {
       this.clear()

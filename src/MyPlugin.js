@@ -5,7 +5,6 @@ export default {
         Vue.prototype.$toast =(message,toastOptions)=>{
             if(currentToast){
                 currentToast.clear()
-                currentToast.$destroy()
             }
             currentToast=createToast({Vue,message,propsData:toastOptions})
         }
