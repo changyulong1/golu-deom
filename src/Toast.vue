@@ -1,7 +1,11 @@
 <template>
-  <div class="g-toast">
-    <slot></slot>
-    <div class="line"></div>
+  <div class="g-toast" ref="parent">
+    <div class="message">
+     <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default[0]"></div>
+    </div>
+
+    <div class="line" ref="line"></div>
     <span class="clear" v-if="closButton" @click="onLosClick">
       {{ closButton.text }}
     </span>
@@ -27,17 +31,30 @@ export default {
           text:'关闭',callback: undefined
         }
       }
+    },
+    enableHtml:{
+      type:Boolean,
+      default:false
     }
 
   },
   mounted() {
-    if(this.autoClose){
-      setTimeout(() => {
-        this.clear()
-      },this.autoCloseDelay*1000 )
-    }
+    this.updateStyles()
+    this.execAutoClose()
   },
   methods: {
+    updateStyles(){
+        this.$nextTick(()=>{
+          this.$refs.line.style.height=`${this.$refs.parent.getBoundingClientRect().height}px`
+        })
+    },
+    execAutoClose(){
+      if(this.autoClose){
+        setTimeout(() => {
+          this.clear()
+        },this.autoCloseDelay*1000 )
+      }
+    },
     clear() {
       this.$el.remove()
       this.$destroy()
@@ -60,28 +77,12 @@ $font-size: 12px;
 $toast-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
 .g-toast {
-  font-size: $font-size;
-  height: $toast-height;
-  background: $toast-bg;
-  line-height: 1.8;
-  display: flex;
-  align-items: center;
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50);
-  padding: 0 16px;
-  >.clear{
-    padding-left: 16px;
-    flex-shrink: 0;
-  }
-  >.line{
-    height: 100%;
-    border-left:1px solid #666;
-    margin-left: 16px;
-  }
+  font-size: $font-size;background: $toast-bg;line-height: 1.8;
+  display: flex;align-items: center;color: white;position: fixed;
+  top: 0;left: 50%;transform: translateX(-50%);box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50);
+  padding: 0 16px;border-radius: 4px;
+  >.message{padding: 8px 0;}
+  >.clear{padding-left: 16px;flex-shrink: 0;}
+  >.line{height: 100%;border-left:1px solid #666;margin-left: 16px;}
 }
-
 </style>

@@ -34,13 +34,14 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('我是toast',
+            this.$toast('<h3>我是标签</h3>',
                 {
                     closButton: {
                         text: '关闭', callback: (value) => {
                             value.log()
                         }
-                    }
+                    },
+                    enableHtml:true
                 }
             )
         }
