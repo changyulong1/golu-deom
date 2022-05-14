@@ -41,7 +41,8 @@ new Vue({
                             value.log()
                         }
                     },
-                    enableHtml:true
+                    enableHtml:true,
+                    position:"middle"
                 }
             )
         }
