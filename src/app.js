@@ -10,6 +10,7 @@ import Header from "./Header";
 import Content from "./Content";
 import Aside from "./Aside";
 import Footer from "./Footer";
+import MyPlugin from "./MyPlugin";
 Vue.component('g-button',Button)
 Vue.component('g-icon',Icon)
 Vue.component('g-button-group',buttonGroup)
@@ -21,6 +22,7 @@ Vue.component('g-header',Header)
 Vue.component('g-content',Content)
 Vue.component('g-aside',Aside)
 Vue.component('g-footer',Footer)
+Vue.use(MyPlugin)
 new Vue({
     el:"#app",
     data:{
@@ -30,8 +32,8 @@ new Vue({
         value:'张灿'
     },
     methods:{
-        inputChange(e){
-            console.log(e)
+        inputChange(){
+            this.$toast('我是toast的组件')
         }
     }
 })

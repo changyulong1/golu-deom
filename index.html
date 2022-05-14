@@ -26,44 +26,15 @@
 
     </style>
     <style>
-        .g-aside{
-            width: 150px;
-            background: black;
-        }
-        .g-header{
-            background: #666666;
-            min-height: 100px;
-        }
-        .g-footer{
-            background: #666666;
-            min-height: 100px;
-        }
+      #app{
+          margin: 20px;
+      }
 
     </style>
 </head>
 <body>
 <div id="app">
-<!--    <g-layout style="height: 100vh">-->
-<!--        <g-header class="deom">header</g-header>-->
-<!--        <g-content class="deom">content</g-content>-->
-<!--        <g-footer class="deom">footer</g-footer>-->
-<!--    </g-layout>-->
-<!--    <g-layout style="height: 100vh">-->
-<!--        <g-header class="deom">header</g-header>-->
-<!--        <g-layout>-->
-<!--            <g-aside>aside</g-aside>-->
-<!--            <g-content class="deom">content</g-content>-->
-<!--        </g-layout>-->
-<!--        <g-footer class="deom">footer</g-footer>-->
-<!--    </g-layout>-->
-    <g-layout style="height: 100vh">
-        <g-aside>aside</g-aside>
-        <g-layout>
-            <g-header >header</g-header>
-            <g-content >content</g-content>
-            <g-footer>footer</g-footer>
-        </g-layout>
-    </g-layout>
+<button @click="inputChange">toast</button>
 </div>
 <script src="./src/app.js"></script>
 </body>
