@@ -1,5 +1,5 @@
 <template>
-  <div class="g-tabs-time" @click="onclick" :class="classes">
+  <div class="g-tabs-time" @click="onclick" :class="classes" :data-name="name">
     <slot></slot>
   </div>
 </template>

@@ -19,6 +19,7 @@ export default {
       this.$refs.line.style.left = `${left}px`
     })
 
+
   }
 };
 </script>
@@ -39,7 +40,10 @@ $blue:blue;
   }
   >.actions-wrapper{
     margin-left: auto;
-    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1em;
   }
 
 }

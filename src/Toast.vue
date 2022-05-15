@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="wrapper" :class="toastClasses" >
     <div class="g-toast" ref="parent" >
       <div class="message">
         <slot v-if="!enableHtml"></slot>
