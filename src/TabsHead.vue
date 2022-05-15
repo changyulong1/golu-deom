@@ -7,7 +7,11 @@
 
 <script>
 export default {
-  name: "TabsHead"
+  name: "TabsHead",
+  inject:['eventBus'],
+  mounted(){
+    console.log('head',this.eventBus)
+  }
 };
 </script>
 

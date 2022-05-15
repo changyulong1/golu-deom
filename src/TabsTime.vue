@@ -11,7 +11,15 @@ export default {
     disabled:{
       type:Boolean,
       default:false
+    },
+    name:{
+      type:String | Number,
+      required:true
     }
+  },
+  inject:['eventBus'],
+  created(){
+    console.log('time',this.eventBus)
   }
 };
 </script>

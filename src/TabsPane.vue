@@ -6,7 +6,17 @@
 
 <script>
 export default {
-  name: "TabsPane"
+  name: "TabsPane",
+  inject:['eventBus'],
+  props:{
+    name:{
+      type:String | Number,
+      required:true
+    }
+  },
+  created(){
+    console.log('pane',this.eventBus)
+  }
 }
 </script>
 
