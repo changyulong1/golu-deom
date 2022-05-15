@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Tabs-body",
+  name: "TabsBody",
   inject:['eventBus'],
   created(){
 
@@ -16,6 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 .g-tabs-body{
+  border-top: 1px solid #ccc;
+  padding: 1em 0;
 
 }
 

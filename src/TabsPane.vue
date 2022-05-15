@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 .g-tabs-pane{
   &.active{
-    background: green;
+
   }
 
 }

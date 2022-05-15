@@ -33,14 +33,24 @@ export default {
     }
   },
   mounted(){
-    this.eventBus.$emit('update:selected', this.selected)
+   this.$children.forEach((vm)=>{
+     if(vm.$options.name === 'TabsHead'){
+       vm.$children.forEach((time)=>{
+         if(time.$options.name==="TabsTime" && time.name === this.selected){
+           this.eventBus.$emit('update:selected', this.selected,time)
+         }
+       })
+
+     }
+   })
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .g-tabs{
-
+  //border: 1px solid #000;
 }
 
 </style>

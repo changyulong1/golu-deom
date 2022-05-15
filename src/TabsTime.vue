@@ -1,5 +1,5 @@
 <template>
-  <div class="g-tabs-time" @click="xxx" :class="classes">
+  <div class="g-tabs-time" @click="onclick" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -31,13 +31,13 @@ export default {
     }
   },
   created(){
-    this.eventBus.$on('update:selected',(name)=>{
+    this.eventBus.$on('update:selected',(name,vm)=>{
       this.active = this.name === name;
     })
   },
   methods:{
-    xxx(){
-      this.eventBus.$emit('update:selected',this.name)
+    onclick(){
+      this.eventBus.$emit('update:selected',this.name,this)
     }
   }
 };
@@ -47,8 +47,15 @@ export default {
 .g-tabs-time{
   flex-shrink: 0;
   padding: 0 1em;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
   &.active{
-    background: red;
+    //background: red;
+    color: blueviolet;
+    //border: 1px solid red;
   }
 }
 
