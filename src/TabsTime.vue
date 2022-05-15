@@ -26,7 +26,8 @@ export default {
   computed:{
     classes(){
       return {
-        active:this.active
+        active:this.active,
+        disabled:this.disabled
       }
     }
   },
@@ -37,6 +38,7 @@ export default {
   },
   methods:{
     onclick(){
+      if(this.disabled){return}
       this.eventBus.$emit('update:selected',this.name,this)
     }
   }
@@ -53,9 +55,11 @@ export default {
   align-items: center;
   box-sizing: border-box;
   &.active{
-    //background: red;
     color: blueviolet;
-    //border: 1px solid red;
+  }
+  &.disabled{
+    opacity: 0.2;
+    cursor: not-allowed;
   }
 }
 

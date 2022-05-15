@@ -35,9 +35,9 @@ export default {
   mounted(){
    this.$children.forEach((vm)=>{
      if(vm.$options.name === 'TabsHead'){
-       vm.$children.forEach((time)=>{
-         if(time.$options.name==="TabsTime" && time.name === this.selected){
-           this.eventBus.$emit('update:selected', this.selected,time)
+       vm.$children.forEach((children)=>{
+         if(children.$options.name==="TabsTime" && children.name === this.selected){
+           this.eventBus.$emit('update:selected', this.selected,children)
          }
        })
 
