@@ -32,14 +32,17 @@ export default {
     }
   },
   created(){
-    this.eventBus.$on('update:selected',(name,vm)=>{
-      this.active = this.name === name;
-    })
+    if(this.eventBus){
+      this.eventBus.$on('update:selected',(name,vm)=>{
+        this.active = this.name === name;
+      })
+    }
   },
   methods:{
     onclick(){
       if(this.disabled){return}
-      this.eventBus.$emit('update:selected',this.name,this)
+      this.eventBus && this.eventBus.$emit('update:selected',this.name,this)
+      this.$emit('click', this)
     }
   }
 };

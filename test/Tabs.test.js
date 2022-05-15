@@ -1,8 +1,6 @@
-import tabs from "../src/Tabs";
-
 const expect = chai.expect;
 import Vue from 'vue'
-import Tabs from '../src/Tabs'
+import Tabs from '../src/Tabs';
 import tabsHead from "../src/TabsHead";
 import tabsBody from "../src/TabsBody";
 import tabsPane from "../src/TabsPane";
@@ -16,8 +14,8 @@ describe('Tabs', () => {
         expect(Tabs).to.exist
     })
     describe('props', function () {
-        it('selected选项', (done) => {
-            Vue.component('g-tabs', tabs)
+        it('接受selected属性', (done) => {
+            Vue.component('g-tabs', Tabs)
             Vue.component('g-tabs-head', tabsHead)
             Vue.component('g-tabs-body', tabsBody)
             Vue.component('g-tabs-time', tabsTime)
