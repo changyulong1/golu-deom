@@ -9,7 +9,7 @@ export default {
   name: "Tabs-body",
   inject:['eventBus'],
   created(){
-    console.log('body',this.eventBus)
+
   }
 };
 </script>

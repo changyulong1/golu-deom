@@ -1,5 +1,5 @@
 <template>
-  <div class="g-tabs-pane">
+  <div class="g-tabs-pane" :class="classes" v-if="active">
     <slot></slot>
   </div>
 </template>
@@ -7,6 +7,11 @@
 <script>
 export default {
   name: "TabsPane",
+  data(){
+   return {
+     active:false
+   }
+  },
   inject:['eventBus'],
   props:{
     name:{
@@ -14,14 +19,26 @@ export default {
       required:true
     }
   },
+  computed:{
+    classes(){
+      return {
+        active:this.active
+      }
+    }
+  },
   created(){
-    console.log('pane',this.eventBus)
+    this.eventBus.$on('update:selected',(name)=>{
+      this.active = this.name === name;
+    })
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .g-tabs-pane{
+  &.active{
+    background: green;
+  }
 
 }
 
