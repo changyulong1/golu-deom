@@ -1,6 +1,6 @@
 <template>
-  <div class="g-popover" ref="popover" @click.stop="onClick">
-    <div class="wrapper" ref="wrapper" v-if="vsible" @click.stop>
+  <div class="g-popover" ref="popover" @click="onClick">
+    <div class="wrapper" ref="wrapper" v-if="vsible" >
       <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -16,21 +16,38 @@ export default {
     }
   },
   methods:{
-    onClick(){
+    positionContent(){
+      document.body.appendChild(this.$refs.wrapper)
+      const {top,left} = this.$refs.popover.getBoundingClientRect()
+      const scrollTop = document.documentElement.scrollTop
+      const scrollLeft = document.documentElement.scrollLeft
+      this.$refs.wrapper.style.top=top+scrollTop+'px'
+      this.$refs.wrapper.style.left=left+scrollLeft+'px'
+    },
+    onClickDocument(e){
+     if(this.$refs.popover&& (this.$refs.popover === e.target || this.$refs.wrapper.contains(e.target))){
+       return
+     }
+     this.clear()
+    },
+    open(){
       this.vsible=!this.vsible
-      if(this.vsible === true){
-        this.$nextTick(()=>{
-          const {top,left} = this.$refs.popover.getBoundingClientRect()
-          const scrollTop = document.documentElement.scrollTop
-          const scrollLeft = document.documentElement.scrollLeft
-          this.$refs.wrapper.style.top=top+scrollTop+'px'
-          this.$refs.wrapper.style.left=left+scrollLeft+'px'
-          let eventHandler = ()=>{
-            this.vsible =false
-            document.removeEventListener('click',eventHandler)
-          }
-          document.addEventListener('click',eventHandler)
-        })
+      this.$nextTick(()=>{
+        this.positionContent()
+        document.addEventListener('click',this.onClickDocument)
+      })
+    },
+    clear(){
+      this.vsible =false
+      document.removeEventListener('click',this.onClickDocument)
+    },
+    onClick(e){
+      if(e.target===this.$refs.popover){
+        if(this.vsible === true){
+          this.clear()
+        }else{
+          this.open()
+        }
       }
     }
   }

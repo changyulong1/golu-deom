@@ -32,6 +32,7 @@
         }
         .cc{
             margin-left: 50px;
+            border: 1px solid yellow;
         }
 
     </style>
@@ -39,10 +40,7 @@
 <body >
 <div id="app">
   <div >
-      <div style=" width: 1200px; height: 500px;border: 1px solid yellow">
-
-      </div>
-      <div class="cc" style="overflow: hidden">
+      <div class="cc" style="overflow: hidden" @click="yyy">
           <g-popover>
               <template v-slot:content>
                   我是popover
