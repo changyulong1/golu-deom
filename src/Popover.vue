@@ -1,6 +1,6 @@
 <template>
-  <div class="g-popover" @click.stop="onClick">
-    <div class="wrapper" v-if="vsible" @click.stop>
+  <div class="g-popover" ref="popover" @click.stop="onClick">
+    <div class="wrapper" ref="wrapper" v-if="vsible" @click.stop>
       <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -17,23 +17,21 @@ export default {
   },
   methods:{
     onClick(){
-      console.log(1)
       this.vsible=!this.vsible
       if(this.vsible === true){
-        console.log(2)
         this.$nextTick(()=>{
-          console.log(3)
+          const {top,left} = this.$refs.popover.getBoundingClientRect()
+          const scrollTop = document.documentElement.scrollTop
+          const scrollLeft = document.documentElement.scrollLeft
+          this.$refs.wrapper.style.top=top+scrollTop+'px'
+          this.$refs.wrapper.style.left=left+scrollLeft+'px'
           let eventHandler = ()=>{
-            console.log(4)
             this.vsible =false
-            console.log(444)
             document.removeEventListener('click',eventHandler)
           }
           document.addEventListener('click',eventHandler)
         })
       }
-
-
     }
   }
 };
@@ -44,11 +42,13 @@ export default {
 .g-popover{
   display: inline-block;
   position: relative;
-  >.wrapper{
-    border: 1px solid red;
-    position: absolute;
-    bottom: 100%;
-  }
+  border: 1px solid green;
+
+}
+.wrapper{
+  border: 1px solid red;
+  position: absolute;
+  transform: translateY(-100%);
 }
 
 </style>

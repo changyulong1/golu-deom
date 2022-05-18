@@ -27,19 +27,31 @@
     </style>
     <style>
         #app {
-            margin: 120px;
+            /*margin: 40px;*/
+            padding-top: 100px; padding-left: 100px
+        }
+        .cc{
+            margin-left: 50px;
         }
 
     </style>
 </head>
-<body style=" border: 1px solid green;">
+<body >
 <div id="app">
-    <g-popover>
-        <template v-slot:content>
-            我是popover
-        </template>
-        点击我
-    </g-popover>
+  <div >
+      <div style=" width: 1200px; height: 500px;border: 1px solid yellow">
+
+      </div>
+      <div class="cc" style="overflow: hidden">
+          <g-popover>
+              <template v-slot:content>
+                  我是popover
+              </template>
+              点击我
+          </g-popover>
+      </div>
+
+  </div>
 </div>
 <script src="./src/app.js"></script>
 </body>
