@@ -27,12 +27,11 @@
     </style>
     <style>
         #app {
-            /*margin: 40px;*/
             padding-top: 100px; padding-left: 100px
         }
         .cc{
             margin-left: 50px;
-            border: 1px solid yellow;
+            margin-top: 50px;
         }
 
     </style>
@@ -40,12 +39,18 @@
 <body >
 <div id="app">
   <div >
-      <div class="cc" style="overflow: hidden" @click="yyy">
+      <div class="cc" style="overflow: hidden">
+          <g-popover>
+              <template v-slot:content>
+                  abscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfg abscdfg abscdfg abscdfg abscdfg
+              </template>
+              点我
+          </g-popover>
           <g-popover>
               <template v-slot:content>
                   我是popover
               </template>
-              点击我
+              点我
           </g-popover>
       </div>
 

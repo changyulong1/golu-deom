@@ -3,7 +3,7 @@
     <div class="wrapper" ref="wrapper" v-if="vsible" >
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper">
+    <span ref="triggerWrapper" style="display: inline-block;border: 1px solid red">
        <slot></slot>
     </span>
   </div>
@@ -27,7 +27,6 @@ export default {
       this.$refs.wrapper.style.left=left+scrollLeft+'px'
     },
     onClickDocument(e){
-      // console.log(this.$refs.wrapper.contains(e.target));
      if(this.$refs.triggerWrapper&& (this.$refs.triggerWrapper === e.target || this.$refs.wrapper.contains(e.target))){
        return
      }
@@ -45,8 +44,6 @@ export default {
       document.removeEventListener('click',this.onClickDocument)
     },
     onClick(e){
-      // this.$refs.wrapper.contains(e.target)
-      console.log(6)
       if(e.target===this.$refs.triggerWrapper){
         if(this.vsible === true){
           this.clear()
@@ -60,17 +57,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$border-color: #333;
+$border-radius: 4px;
 
 .g-popover{
   display: inline-block;
   position: relative;
-  border: 1px solid green;
+  vertical-align: top;
 
 }
 .wrapper{
-  border: 1px solid red;
   position: absolute;
+  border: 1px solid $border-color;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  border-radius: $border-radius;
+  padding: .5em 1em;
+  margin-top: -10px;
   transform: translateY(-100%);
+  max-width: 20em;
+  word-break: break-all;
+  &:before,&:after{
+    content: "";
+    display: block;
+    border: 10px solid transparent;
+    position: absolute;
+    left: 10px;
+  }
+  &:before{
+    border-top-color:black;
+    top: 100%;
+  }
+  &:after{
+    border-top-color:white;
+    top:  calc(100% - 1px);
+  }
 }
 
 </style>
