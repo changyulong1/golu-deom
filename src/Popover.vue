@@ -1,5 +1,5 @@
 <template>
-  <div class="g-popover" ref="popover" @click="onClick">
+  <div class="g-popover" ref="popover">
     <div class="wrapper" :class="{[`position-${position}`]:true}" ref="wrapper" v-if="vsible">
       <slot name="content"></slot>
     </div>
@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: "Popover",
   props: {
@@ -19,6 +19,13 @@ export default {
       validator(value) {
         return ['top', 'left', 'bottom', 'right'].indexOf(value) >= 0;
       }
+    },
+    trigger:{
+      type:String,
+      default:'click',
+      validator(value) {
+        return ['click','hover'].indexOf(value) >=0
+      }
     }
   },
   data() {
@@ -26,35 +33,35 @@ export default {
       vsible: false
     };
   },
+  mounted(){
+    if(this.trigger === 'click'){
+      this.$refs.popover.addEventListener('click',this.onClick)
+    }else{
+      this.$refs.popover.addEventListener('mouseenter', this.open)
+      this.$refs.popover.addEventListener('mouseleave', this.clear)
+    }
+  },
   methods: {
     positionContent() {
       document.body.appendChild(this.$refs.wrapper);
       const {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect();
-
       const scrollTop = document.documentElement.scrollTop;
       const scrollLeft = document.documentElement.scrollLeft;
-      if (this.position === 'top') {
-        console.log('top');
-        this.$refs.wrapper.style.top = top + scrollTop + 'px';
-        this.$refs.wrapper.style.left = left + scrollLeft + 'px';
-      } else if (this.position === 'bottom') {
-        console.log('bottom');
-        this.$refs.wrapper.style.top = top + height + scrollTop + 'px';
-        this.$refs.wrapper.style.left = left + scrollLeft + 'px';
-      } else if (this.position === 'left') {
-        console.log('left');
-        const {height: height2} = this.$refs.wrapper.getBoundingClientRect();
-        console.log((height2 - height) / 2);
-        this.$refs.wrapper.style.top = top + scrollTop + (height - height2) / 2 + 'px';
-        this.$refs.wrapper.style.left = left + scrollLeft + 'px';
-      }else if(this.position === 'right'){
-        console.log('right');
-        const {height: height2} = this.$refs.wrapper.getBoundingClientRect();
-        console.log((height2 - height) / 2);
-        this.$refs.wrapper.style.top = top + scrollTop + (height - height2) / 2 + 'px';
-        this.$refs.wrapper.style.left = left+ scrollLeft +width+ 'px';
-
-      }
+      const {height: height2} = this.$refs.wrapper.getBoundingClientRect();
+      const positions = {
+        top: {top: top + scrollTop, left: left + scrollLeft},
+        bottom: {top: top + height + scrollTop, left: left + scrollLeft},
+        left: {
+          top: top + scrollTop + (height - height2) / 2,
+          left: left + scrollLeft
+        },
+        right: {
+          top: top + scrollTop + (height - height2) / 2,
+          left:left + scrollLeft + width
+        }
+      };
+      this.$refs.wrapper.style.top = positions[this.position].top+'px'
+      this.$refs.wrapper.style.left = positions[this.position].left+'px'
     },
     onClickDocument(e) {
       if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {
@@ -77,6 +84,7 @@ export default {
       document.removeEventListener('click', this.onClickDocument);
     },
     onClick(e) {
+      console.log(558)
       if (this.$refs.triggerWrapper.contains(e.target)) {
         if (this.vsible === true) {
           this.clear();
@@ -114,7 +122,6 @@ $border-radius: 4px;
     display: block;
     border: 10px solid transparent;
     position: absolute;
-    //left: 10px;
   }
 
   &.position-top {
@@ -149,14 +156,17 @@ $border-radius: 4px;
   &.position-left {
     transform: translateX(-100%);
     margin-left: -10px;
+
     &:before, &:after {
       transform: translateY(-50%);
       top: 50%;
     }
+
     &:before {
       border-left-color: black;
       left: 100%;
     }
+
     &:after {
       border-left-color: white;
       left: calc(100% - 1px);
@@ -164,15 +174,18 @@ $border-radius: 4px;
   }
 
   &.position-right {
-   margin-left: 10px;
+    margin-left: 10px;
+
     &:before, &:after {
       transform: translateY(-50%);
       top: 50%;
     }
+
     &:before {
       border-right-color: black;
       right: 100%;
     }
+
     &:after {
       border-right-color: white;
       right: calc(100% - 1px);
