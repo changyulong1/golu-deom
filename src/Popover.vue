@@ -3,7 +3,9 @@
     <div class="wrapper" ref="wrapper" v-if="vsible" >
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <span ref="triggerWrapper">
+       <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -18,14 +20,15 @@ export default {
   methods:{
     positionContent(){
       document.body.appendChild(this.$refs.wrapper)
-      const {top,left} = this.$refs.popover.getBoundingClientRect()
+      const {top,left} = this.$refs.triggerWrapper.getBoundingClientRect()
       const scrollTop = document.documentElement.scrollTop
       const scrollLeft = document.documentElement.scrollLeft
       this.$refs.wrapper.style.top=top+scrollTop+'px'
       this.$refs.wrapper.style.left=left+scrollLeft+'px'
     },
     onClickDocument(e){
-     if(this.$refs.popover&& (this.$refs.popover === e.target || this.$refs.wrapper.contains(e.target))){
+      // console.log(this.$refs.wrapper.contains(e.target));
+     if(this.$refs.triggerWrapper&& (this.$refs.triggerWrapper === e.target || this.$refs.wrapper.contains(e.target))){
        return
      }
      this.clear()
@@ -42,7 +45,9 @@ export default {
       document.removeEventListener('click',this.onClickDocument)
     },
     onClick(e){
-      if(e.target===this.$refs.popover){
+      // this.$refs.wrapper.contains(e.target)
+      console.log(6)
+      if(e.target===this.$refs.triggerWrapper){
         if(this.vsible === true){
           this.clear()
         }else{
