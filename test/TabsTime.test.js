@@ -1,5 +1,8 @@
 const expect = chai.expect;
 import Vue from 'vue'
+
+
+
 import tabsTime from "../src/TabsTime";
 
 Vue.config.productionTip = false

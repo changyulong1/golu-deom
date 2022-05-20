@@ -84,7 +84,6 @@ export default {
       document.removeEventListener('click', this.onClickDocument);
     },
     onClick(e) {
-      console.log(558)
       if (this.$refs.triggerWrapper.contains(e.target)) {
         if (this.vsible === true) {
           this.clear();
@@ -127,14 +126,14 @@ $border-radius: 4px;
   &.position-top {
     margin-top: -10px;
     transform: translateY(-100%);
-
     &:before {
       border-top-color: black;
+      border-bottom: none;
       top: 100%;
     }
-
     &:after {
       border-top-color: white;
+      border-bottom: none;
       top: calc(100% - 1px);
     }
   }
@@ -144,21 +143,25 @@ $border-radius: 4px;
 
     &:before {
       border-bottom-color: black;
+      border-top: none;
       bottom: 100%;
     }
 
     &:after {
       border-bottom-color: white;
+      border-top: none;
       bottom: calc(100% - 1px);
     }
   }
 
   &.position-left {
     transform: translateX(-100%);
+
     margin-left: -10px;
 
     &:before, &:after {
       transform: translateY(-50%);
+      border-right: none;
       top: 50%;
     }
 
@@ -175,9 +178,9 @@ $border-radius: 4px;
 
   &.position-right {
     margin-left: 10px;
-
     &:before, &:after {
       transform: translateY(-50%);
+      border-left: none;
       top: 50%;
     }
 
