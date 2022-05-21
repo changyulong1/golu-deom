@@ -27,71 +27,18 @@
     </style>
     <style>
         #app {
-            padding-top: 100px; padding-left: 100px
-        }
-        .cc{
-            margin-left: 50px;
-            margin-top: 50px;
+           margin: 100px;
         }
 
     </style>
 </head>
 <body >
 <div id="app">
-  <div >
-      <div class="cc" style="overflow: hidden">
-          <g-popover position="top">
-              <template v-slot:content>
-                  abscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfg abscdfg abscdfg abscdfg abscdfg
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-          <g-popover position="bottom">
-              <template v-slot:content>
-                  我是popover
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-          <g-popover position="left">
-              <template v-slot:content>
-                  我是popover
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-          <g-popover position="right">
-              <template v-slot:content>
-                  我是popover
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-      </div>
-      <div class="cc" style="overflow: hidden">
-          <g-popover position="top" trigger="hover">
-              <template v-slot:content>
-                  abscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfgabscdfg abscdfg abscdfg abscdfg abscdfg
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-          <g-popover position="bottom" trigger="hover">
-              <template v-slot:content>
-                  我是popover
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-          <g-popover position="left" trigger="hover">
-              <template v-slot:content>
-                  我是popover
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-          <g-popover position="right" trigger="hover">
-              <template v-slot:content>
-                  我是popover
-              </template>
-              <g-button>点我</g-button>
-          </g-popover>
-      </div>
-  </div>
+  <g-collapse>
+      <g-collapse-time title="标题1">内容1</g-collapse-time>
+      <g-collapse-time title="标题2">内容2</g-collapse-time>
+      <g-collapse-time title="标题3">内容3</g-collapse-time>
+  </g-collapse>
 </div>
 <script src="./src/app.js"></script>
 </body>

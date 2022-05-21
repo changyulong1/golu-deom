@@ -17,6 +17,8 @@ import tabsBody from "./TabsBody";
 import tabsPane from "./TabsPane";
 import tabsTime from "./TabsTime";
 import Popover from "./Popover";
+import Collapse from "./Collapse";
+import CollapseTime from "./CollapseTime";
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', buttonGroup)
@@ -34,6 +36,8 @@ Vue.component('g-tabs-body',tabsBody)
 Vue.component('g-tabs-time',tabsTime)
 Vue.component('g-tabs-pane',tabsPane)
 Vue.component('g-popover',Popover)
+Vue.component('g-collapse',Collapse)
+Vue.component('g-collapse-time',CollapseTime)
 Vue.use(MyPlugin)
 new Vue({
     el: "#app",
