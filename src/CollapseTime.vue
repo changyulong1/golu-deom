@@ -1,9 +1,9 @@
 <template>
-<div class="g-collapse-time">
-  <div class="title">
+<div class="g-collapse-time" >
+  <div class="title" @click="onClick">
     {{ title }}
   </div>
-  <div class="content">
+  <div class="content" v-show="show">
     <slot></slot>
   </div>
 </div>
@@ -16,6 +16,25 @@ export default {
     title:{
       type:String,
       readable:true
+    },
+    name:{
+      type:String
+    }
+  },
+ data(){
+    return {
+      show:false
+    }
+ },
+  inject:['eventBus'],
+  methods:{
+    onClick(){
+      if(this.show){
+        this.show = false
+      }else{
+        this.show = true
+        this.eventBus.$emit('update:select',this)
+      }
     }
   }
 };
@@ -38,12 +57,14 @@ $border-radius:4px;
     >.title{
       border-top-right-radius: $border-radius;
       border-top-left-radius: $border-radius;
+      margin-bottom: -1px;
     }
   }
   &:last-child{
     >.title:last-child{
       border-bottom-right-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
+      margin-bottom: -1px;
     }
   }
   >.content{

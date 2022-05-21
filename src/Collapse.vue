@@ -5,8 +5,42 @@
 </template>
 
 <script lang="ts">
+import Vue from "vue";
 export default {
-  name: "Collapse"
+  name: "Collapse",
+  props:{
+    single:{
+      type:Boolean,
+      default:false
+    }
+  },
+  data(){
+    return {
+      eventBus:new Vue()
+    }
+  },
+  provide(){
+    if(this.eventBus){
+      return {
+        eventBus:this.eventBus
+      }
+    }
+  },
+  mounted() {
+    this.eventBus.$on('update:select',(vm)=>{
+      this.$children.forEach((time)=>{
+        if(this.single){
+            console.log('什么都不做')
+        }else{
+          if(time === vm){
+            time.show = true
+          }else{
+            time.show = false
+          }
+        }
+      })
+    })
+  }
 };
 </script>
 
