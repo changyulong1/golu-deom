@@ -27,6 +27,7 @@ describe('tabsTime', () => {
             const vm = new Constructor({
                 propsData: {
                     disabled: true,
+                    name:'1'
                 }
             }).$mount()
             expect(vm.$el.classList.contains('disabled')).to.be.true
@@ -35,7 +36,6 @@ describe('tabsTime', () => {
             vm.$el.click()
             expect(callback).to.have.not.been.called
         })
-
 
     })
 })
