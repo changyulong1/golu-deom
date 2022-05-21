@@ -15,6 +15,7 @@ export default {
   border-top: 1px solid #ccc;
   padding: 1em 0;
 
+
 }
 
 </style>

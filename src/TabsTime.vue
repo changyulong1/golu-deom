@@ -22,12 +22,7 @@ export default {
       required:true,
     }
   },
-  inject:{
-    eventBus:{
-      from:'eventBus',
-      default:null
-    }
-  },
+  inject:['eventBus'],
   computed:{
     classes(){
       return {

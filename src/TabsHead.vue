@@ -14,7 +14,8 @@ export default {
   inject:['eventBus'],
   mounted(){
     this.eventBus && this.eventBus.$on('update:selected',(name,vm)=>{
-      let {width,left} = vm.$el.getBoundingClientRect()
+      let {width} = vm.$el.getBoundingClientRect()
+      const left = vm.$el.offsetLeft
       this.$refs.line.style.width= `${width}px`
       this.$refs.line.style.left = `${left}px`
     })
