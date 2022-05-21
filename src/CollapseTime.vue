@@ -1,9 +1,9 @@
 <template>
   <div class="g-collapse-time">
-    <div class="title" @click="onClick">
+    <div class="title" :data-name="name" @click="onClick">
       {{ title }}
     </div>
-    <div class="content" v-show="show">
+    <div class="content" ref="content" v-if="show">
       <slot></slot>
     </div>
   </div>
