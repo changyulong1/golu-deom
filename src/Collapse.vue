@@ -12,6 +12,9 @@ export default {
     single:{
       type:Boolean,
       default:false
+    },
+    selected:{
+      type:String
     }
   },
   data(){
@@ -20,25 +23,15 @@ export default {
     }
   },
   provide(){
-    if(this.eventBus){
-      return {
-        eventBus:this.eventBus
-      }
+    return {
+      eventBus:this.eventBus
     }
   },
   mounted() {
-    this.eventBus.$on('update:select',(vm)=>{
-      this.$children.forEach((time)=>{
-        if(this.single){
-            console.log('什么都不做')
-        }else{
-          if(time === vm){
-            time.show = true
-          }else{
-            time.show = false
-          }
-        }
-      })
+    this.eventBus.$emit('update:selected',this.selected)
+    this.eventBus.$on('update:selected',(name)=>{
+      console.log(name)
+      this.$emit('update:selected',name)
     })
   }
 };

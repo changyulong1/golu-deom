@@ -42,7 +42,7 @@ Vue.use(MyPlugin)
 new Vue({
     el: "#app",
     data: {
-        selectedTab: 'sports'
+        selected: '2'
     },
     methods: {
         yyy(){

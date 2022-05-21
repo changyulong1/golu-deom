@@ -27,14 +27,29 @@ export default {
     }
  },
   inject:['eventBus'],
+  mounted(){
+    this.eventBus.$on('update:selected',(name)=>{
+      if(name !== this.name){
+        this.clear()
+      }else{
+        this.open()
+      }
+    })
+
+  },
   methods:{
     onClick(){
       if(this.show){
-        this.show = false
+        this.show=false
       }else{
-        this.show = true
-        this.eventBus.$emit('update:select',this)
+        this.eventBus.$emit('update:selected',this.name)
       }
+    },
+    open(){
+      this.show = true
+    },
+    clear(){
+      this.show= false
     }
   }
 };
