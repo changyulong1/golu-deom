@@ -42,7 +42,7 @@ Vue.use(MyPlugin)
 new Vue({
     el: "#app",
     data: {
-        selected: '2'
+        selected: ['1','2']
     },
     methods: {
         yyy(){
