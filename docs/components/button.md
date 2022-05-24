@@ -1,9 +1,25 @@
 ---
-title: Button
-sidebarDepth: 2
+title: Button-按钮
 ---
 # 按钮
 
-使用方法
+**简单使用**
+
+**预览**
 
 <button-demos></button-demos>
+
+**代码**
+~~~html
+ <g-button>默认按钮</g-button>
+<g-button icon="setup">默认按钮</g-button>
+<g-button :loading="true">默认按钮</g-button>
+<g-button disabled>默认按钮</g-button>
+~~~
+
+
+
+
+
+
+

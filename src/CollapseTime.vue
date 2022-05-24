@@ -55,7 +55,8 @@ $border-radius: 4px;
     margin-right: -1px;
     display: flex;
     align-items: center;
-    padding: 0 8px;
+    padding: 10px 8px;
+    font-weight: 600;
   }
 
   &:first-child {
@@ -75,7 +76,7 @@ $border-radius: 4px;
   }
 
   > .content {
-    padding: 8px;
+    padding: 10px;
   }
 }
 

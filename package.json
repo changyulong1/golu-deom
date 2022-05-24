@@ -1,7 +1,10 @@
 {
-  "name": "gulo-deom",
-  "version": "0.0.2",
+  "name": "golong-ui",
+  "version": "0.0.9",
   "description": "这是一个ui组件库",
+  "files": [
+    "dist/*"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
@@ -32,12 +35,14 @@
     "chai": "^4.1.2",
     "chai-spies": "^1.0.0",
     "cssnano": "^5.1.7",
+    "highlight": "^0.2.4",
     "karma": "^6.3.19",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
     "karma-chrome-launcher": "^3.1.1",
     "karma-mocha": "^2.0.1",
     "karma-sinon-chai": "^2.0.2",
+    "marked": "^4.0.16",
     "mocha": "^10.0.0",
     "postcss": "^8.4.13",
     "sass": "^1.51.0",

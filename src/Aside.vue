@@ -2,7 +2,7 @@
   <transition name="g-aside">
     <div class="g-aside" v-if="has">
       <slot></slot>
-      <button @click="has=false">点击</button>
+      <button @click="has=false">关闭</button>
     </div>
   </transition>
 </template>
@@ -20,6 +20,12 @@ export default {
 
 <style lang="scss" scoped>
 .g-aside{
+  position: relative;
+  >button{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
 }
 .g-aside-enter-active, .g-aside-leave-active {
