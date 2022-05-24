@@ -7,7 +7,10 @@ title: popover-弹出层
 
 **预览**
 
+<ClientOnly>
 <popover-deom></popover-deom>
+</ClientOnly>
+
 
 **代码**
 ~~~vue
@@ -41,7 +44,10 @@ title: popover-弹出层
 ## 将触发方式改为 hover
 
 **预览**
+
+<ClientOnly>
 <popover-deom1></popover-deom1>
+</ClientOnly>
 
 **代码**
 ~~~vue

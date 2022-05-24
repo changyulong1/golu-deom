@@ -8,7 +8,10 @@ title: Toast - 通知
 
 **预览**
 
+<ClientOnly>
 <toast-deom></toast-deom>
+</ClientOnly>
+
 
 **代码**
 
@@ -28,7 +31,10 @@ title: Toast - 通知
 
 **预览**
 
+<ClientOnly>
 <toast-deom1></toast-deom1>
+</ClientOnly>
+
 
 **代码**
 

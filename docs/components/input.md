@@ -5,7 +5,10 @@ title: Input-输入框
 **简单用法**
 
 **用法**
+<ClientOnly>
 <imput-doem/>
+</ClientOnly>
+
 
 **代码**
 ~~~vue
@@ -18,8 +21,10 @@ title: Input-输入框
 
 
 **预览**
-
+<ClientOnly>
 <input-model></input-model>
+</ClientOnly>
+
 
 **代码**
 ~~~vue

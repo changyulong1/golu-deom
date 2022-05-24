@@ -6,8 +6,10 @@ title: grid-网格布局
 ## 24格网格
 
 **预览**
-
+<ClientOnly>
 <grid-deom></grid-deom>
+</ClientOnly>
+
 
 **代码**
 ~~~vue
@@ -119,7 +121,10 @@ title: grid-网格布局
 
 **预览**
 
+<ClientOnly>
 <grid-gutter></grid-gutter>
+</ClientOnly>
+
 
 **代码**
 ~~~vue
@@ -170,7 +175,11 @@ title: grid-网格布局
 
 **预览**
 
+<ClientOnly>
 <grid-offset></grid-offset>
+</ClientOnly>
+
+
 
 **代码**
 

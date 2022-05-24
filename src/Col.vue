@@ -85,29 +85,34 @@ export default {
 <style lang="scss" scoped>
 .g-col {
   $class-prefix: col-;
+
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
-      width: $n/24*100%;
+      $width:($n/24)*100%;
+      width: $width;
     }
   }
 
   $class-offset: offset-;
   @for $n from 1 through 24 {
     &.#{$class-offset}#{$n} {
-      margin-left: $n/24*100%;
+      $left:($n/24)*100%;
+      margin-left: $left;
     }
   }
   @media (min-width: 577px) {
     $class-prefix: col-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: $n / 24 * 100%;
+        $width:($n/24)*100%;
+        width: $width;
       }
     }
     $class-prefix: offset-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: $n / 24 * 100%;
+        $left:($n/24)*100%;
+        margin-left: $left;
       }
     }
   }
@@ -115,13 +120,15 @@ export default {
     $class-prefix: col-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: $n / 24 * 100%;
+        $width:($n/24)*100%;
+        width: $width;
       }
     }
     $class-prefix: offset-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: $n / 24 * 100%;
+        $left:($n/24)*100%;
+        margin-left: $left;
       }
     }
   }
@@ -129,13 +136,15 @@ export default {
     $class-prefix: col-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-      width: $n / 24 * 100%;
+        $width:($n/24)*100%;
+      width: $width;
       }
     }
     $class-prefix: offset-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: $n / 24 * 100%;
+        $left:($n/24)*100%;
+        margin-left: $left;
       }
     }
   }
@@ -143,13 +152,15 @@ export default {
     $class-prefix: col-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: $n / 24 * 100%;
+        $width:($n/24)*100%;
+        width: $width;
       }
     }
     $class-prefix: offset-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: $n / 24 * 100%;
+        $left:($n/24)*100%;
+        margin-left: $left;
       }
     }
   }
