@@ -43,5 +43,8 @@ const component = { //通过install来支持组件
         Vue.use(MyPlugin)
     }
 }
+if(typeof window!=='undefined' && window.Vue){
+    window.Vue.use(component)
+}
 
 export default component
