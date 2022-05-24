@@ -7,9 +7,7 @@ title: Tabs - 标签
 
 **预览**
 
-<ClientOnly>
 <tabs-deom></tabs-deom>
-</ClientOnly>
 
 
 **代码**

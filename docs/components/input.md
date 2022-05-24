@@ -21,9 +21,8 @@ title: Input-输入框
 
 
 **预览**
-<ClientOnly>
+
 <input-model></input-model>
-</ClientOnly>
 
 
 **代码**

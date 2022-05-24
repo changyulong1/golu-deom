@@ -6,9 +6,8 @@ title: Button-按钮
 **简单使用**
 
 **预览**
-<ClientOnly>
+
 <button-demos></button-demos>
-</ClientOnly>
 
 
 

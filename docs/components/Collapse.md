@@ -9,9 +9,7 @@ title: Collapse-折叠面板
 
 **预览**
 
-<ClientOnly>
 <collapse-deom1></collapse-deom1>
-</ClientOnly>
 
 
 **代码**

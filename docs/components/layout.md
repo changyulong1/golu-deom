@@ -7,9 +7,7 @@ title: Layout-布局
 
 **预览**
 
-<ClientOnly>
 <layout-deom></layout-deom>
-</ClientOnly>
 
 
 
@@ -33,9 +31,8 @@ title: Layout-布局
 
 **预览**
 
-<ClientOnly>
+
 <layout-deom1></layout-deom1>
-</ClientOnly>
 
 
 **代码**
@@ -62,9 +59,7 @@ title: Layout-布局
 
 **预览**
 
-<ClientOnly>
 <layout-deom2></layout-deom2>
-</ClientOnly>
 
 
 **代码**
