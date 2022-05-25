@@ -8,7 +8,10 @@ title: popover-弹出层
 **预览**
 
 
+<ClientOnly>
 <popover-deom></popover-deom>
+</ClientOnly>
+
 
 
 
@@ -45,8 +48,10 @@ title: popover-弹出层
 
 **预览**
 
-
+<ClientOnly>
 <popover-deom1></popover-deom1>
+</ClientOnly>
+
 
 **代码**
 ~~~vue

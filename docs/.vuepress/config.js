@@ -1,4 +1,5 @@
 module.exports = {
+    base: "/vuepress/",
     title: ' goLong-ui',
     description: '一个好用的UI框架',
     themeConfig: {
@@ -30,7 +31,6 @@ module.exports = {
                     '/components/Collapse',
                 ]
             }
-
         ]
     }
 }

@@ -9,7 +9,10 @@ title: Collapse-折叠面板
 
 **预览**
 
+<ClientOnly>
 <collapse-deom1></collapse-deom1>
+</ClientOnly>
+
 
 
 **代码**
@@ -38,7 +41,10 @@ export default {
 
 **预览**
 
+<ClientOnly>
 <Collapse-deom></Collapse-deom>
+</ClientOnly>
+
 **代码**
 ~~~vue
 
