@@ -1,5 +1,6 @@
 module.exports = {
-    title: ' goLong-ui',
+    base:'/goLongUi/',
+    title: ' goLong Ui',
     description: '一个好用的UI框架',
     themeConfig: {
         nav: [

@@ -1,17 +1,12 @@
----
-home: true
-heroImage: /img/hero.png
-actionText: 快速上手 →
-actionLink: /guide/
-features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-  footer: MIT Licensed | Copyright © 2018-present Evan You
----
+# goLong UI 是什么？
+
+`goLong UI` 是我在学习Vue过程中尝试写的一套 `UI` 框架，提供了一些常用的`UI`组件，适合 `PC `端和`移动端`使用，该框架内的组件会一直更新下去，希望对你有所帮助。
+
+目前已开发完成的组件有：按钮、输入框、`grid`布局、网格布局。
+
+`Toast`、`Tabs`、`Popover`、手风琴等组件会陆续实现。
 
 
-
+::: warning
+注意：该项目仅为学习使用，请不要用于自己的项目中。如果你对这个项目感兴趣的话，可以查看[]()
+:::
