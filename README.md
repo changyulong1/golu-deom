@@ -1,56 +1,28 @@
 # 轱辘 - 一个 Vue UI 组件
+# goLong UI 是什么？
 
-[![Build Status](https://travis-ci.org/FrankFang/frank-test-1.svg?branch=master)](https://travis-ci.org/FrankFang/frank-test-1)
+`goLong UI` 是我在学习Vue过程中尝试写的一套 `UI` 框架，提供了一些常用的`UI`组件，适合 `PC `端和`移动端`使用，该框架内的组件会一直更新下去，希望对你有所帮助。
 
-## 介绍
-这是我在学习 Vue 过程中做的一个 UI 框架，希望对你有用。
+目前已开发完成的组件有：按钮、输入框、`grid`布局、网格布局。
 
-## 安装
-## 开始使用
-添加 CSS 样式
-使用本框架前，请在 CSS 中开启 border-box
+`Toast`、`Tabs`、`Popover`、手风琴等组件会陆续实现。
 
+
+::: warning
+注意：该项目仅为学习使用，请不要用于自己的项目中。如果你对这个项目感兴趣的话
+:::
+# 安装
+
+~~~bash
+npm install golong-ui
+ # 或者
+yarn add golong-ui
+
+
+**使用前言设置**
+~~~
   ```
   *,*::before,*::after{box-sizing: border-box;}
   ```
 IE 8 及以上浏览器都支持此样式。
 
-你还需要设置默认颜色等变量（后续会改为 SCSS 变量）
-  ```
-  html {
-    --button-height: 32px;
-    --font-size: 14px;
-    --button-bg: white;
-    --button-active-bg: #eee;
-    --border-radius: 4px;
-    --color: #333;
-    --border-color: #999;
-    --border-color-hover: #666;
-  }
-  ```
-IE 15 及以上浏览器都支持此样式。
-
-2. 安装 gulu
-  ```
-  npm i --save frank-test-1-1
-  ```
-3. 引入 gulu
-  ```
-  import {Button, ButtonGroup, Icon} from 'gulo-deom'
-  import 'gulo-deom/dist/index.css'
-使用本框架前，请在 CSS 中开启 border-box
-  export default {
-    name: 'app',
-    components: {
-      'g-button': Button,
-      'g-icon': Icon
-    }
-  }
-  ```
-## 文档
-
-## 提问
-
-## 变更记录
-
-## 联系方式
